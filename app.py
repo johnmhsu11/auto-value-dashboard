@@ -7,8 +7,16 @@ st.set_page_config(page_title="Auto True Value vs Price", page_icon="🚗", layo
 st.markdown("""
 <style>
     .stApp { background-color: #111827; }
-    section[data-testid="stSidebar"] { background-color: #1f2937; }
     .block-container { padding-top: 2rem; padding-bottom: 2rem; }
+    /* Expander dark theme */
+    [data-testid="stExpander"] details {
+        background-color: #1f2937;
+        border: 1px solid #374151 !important;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+    }
+    [data-testid="stExpander"] summary { color: #f9fafb !important; }
+    [data-testid="stExpander"] summary:hover { background-color: #374151 !important; border-radius: 8px; }
     h1, h2, h3, p, label { color: #f9fafb !important; }
     [data-testid="metric-container"] {
         background: #1f2937;
@@ -80,10 +88,17 @@ def load_data():
 
 df = load_data()
 
-# ── Sidebar ────────────────────────────────────────────────────────────────────
-with st.sidebar:
-    st.markdown("## Filters")
+# ── Header ─────────────────────────────────────────────────────────────────────
+st.markdown("# 🚗 Automobile True Value vs. Price")
+st.markdown(
+    "<p style='color:#9ca3af;margin-top:-0.5rem;margin-bottom:1rem'>"
+    "How much are you actually getting for your money? Comparing sticker price against "
+    "a composite score built from reliability, depreciation, and safety.</p>",
+    unsafe_allow_html=True,
+)
 
+# ── Filters ─────────────────────────────────────────────────────────────────────
+with st.expander("⚙️ Filters", expanded=False):
     all_brands = sorted(df["Brand"].unique())
     b1, b2 = st.columns(2)
     if b1.button("Select All", use_container_width=True):
@@ -97,11 +112,12 @@ with st.sidebar:
         key="brands",
     )
 
+    f1, f2 = st.columns(2)
     all_classes = sorted(df["Class"].unique())
-    selected_classes = st.multiselect("Vehicle Class", all_classes, default=all_classes)
+    selected_classes = f1.multiselect("Vehicle Class", all_classes, default=all_classes)
 
-    st.markdown("**Off-Road Capability**")
-    off_road_filter = st.radio(
+    f2.markdown("**Off-Road Capability**")
+    off_road_filter = f2.radio(
         "Off-Road Capability",
         options=["All Vehicles", "Off-Road Capable (Good or better)", "Excellent Only", "Not Off-Road"],
         index=0,
@@ -113,7 +129,6 @@ with st.sidebar:
         "MSRP Range (USD)", price_min, price_max, (price_min, price_max), step=1000,
         format="$%d",
     )
-    st.markdown("---")
     st.markdown(
         "<small style='color:#9ca3af'>Reliability & safety data sourced from "
         "Consumer Reports and NHTSA (2023). Residual values from iSeeCars.</small>",
@@ -133,15 +148,6 @@ filtered = df[
     df["MSRP_USD"].between(*price_range) &
     df["Off_Road_Rating"].isin(off_road_map[off_road_filter])
 ]
-
-# ── Header ─────────────────────────────────────────────────────────────────────
-st.markdown("# 🚗 Automobile True Value vs. Price")
-st.markdown(
-    "<p style='color:#9ca3af;margin-top:-0.5rem;margin-bottom:1.5rem'>"
-    "How much are you actually getting for your money? Comparing sticker price against "
-    "a composite score built from reliability, depreciation, and safety.</p>",
-    unsafe_allow_html=True,
-)
 
 # ── KPIs ───────────────────────────────────────────────────────────────────────
 if not filtered.empty:
