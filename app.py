@@ -19,6 +19,31 @@ st.markdown("""
     [data-testid="metric-container"] label { color: #9ca3af !important; font-size: 0.8rem; }
     [data-testid="metric-container"] [data-testid="stMetricValue"] { color: #f9fafb !important; }
     .stMultiSelect [data-baseweb="tag"] { background-color: #6366f1; }
+
+    /* ── Mobile adjustments ───────────────────────────────────── */
+    @media (max-width: 640px) {
+        .block-container {
+            padding-left: 0.75rem !important;
+            padding-right: 0.75rem !important;
+            padding-top: 1rem !important;
+        }
+        h1 { font-size: 1.4rem !important; }
+        /* Wrap 4-column KPI row into a 2×2 grid */
+        [data-testid="stHorizontalBlock"] {
+            flex-wrap: wrap !important;
+            gap: 0.5rem !important;
+        }
+        [data-testid="stHorizontalBlock"] > [data-testid="column"] {
+            flex: 1 1 calc(50% - 0.5rem) !important;
+            min-width: calc(50% - 0.5rem) !important;
+        }
+        /* Shrink metric values so long model names don't overflow */
+        [data-testid="metric-container"] [data-testid="stMetricValue"] {
+            font-size: 0.8rem !important;
+            word-break: break-word !important;
+        }
+        [data-testid="metric-container"] { padding: 0.75rem 1rem !important; }
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -176,16 +201,21 @@ if not filtered.empty:
     fig_scatter.add_vline(x=avg_msrp, line_dash="dot", line_color="#374151")
     fig_scatter.update_layout(
         **TEMPLATE["layout"],
-        height=520,
+        height=540,
         xaxis_tickprefix="$",
         legend=dict(
-            orientation="v", x=1.01, y=1,
+            orientation="h",
+            yanchor="top", y=-0.18,
+            xanchor="left", x=0,
             bgcolor="rgba(31,41,55,0.8)",
             bordercolor="#374151", borderwidth=1,
+            font=dict(size=9),
         ),
         legend_itemclick="toggleothers",
         legend_itemdoubleclick="toggle",
     )
+    # Extra bottom margin so the horizontal legend doesn't get clipped
+    fig_scatter.update_layout(margin=dict(b=130))
     st.plotly_chart(fig_scatter, use_container_width=True)
 
 # ── Value per Dollar by brand ──────────────────────────────────────────────────
@@ -214,7 +244,7 @@ fig_brand = px.bar(
 )
 fig_brand.update_layout(
     **TEMPLATE["layout"],
-    height=max(350, len(brand_avg) * 28),
+    height=max(300, len(brand_avg) * 22),
     coloraxis_showscale=False,
     xaxis_title="Value per Dollar Score",
     yaxis_title=None,
