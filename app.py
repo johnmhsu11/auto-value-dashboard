@@ -1,3 +1,7 @@
+import json
+import requests
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -53,7 +57,48 @@ def load_data():
     df["Model_Full"] = df["Brand"] + " " + df["Model"]
     return df
 
+@st.cache_data(show_spinner=False)
+def _fetch_wiki_image(model_full: str) -> str | None:
+    """Return a Wikipedia thumbnail URL for the given car model, or None."""
+    brand, _, model = model_full.partition(" ")
+    for title in [model_full, f"{brand} {model}", model]:
+        try:
+            r = requests.get(
+                "https://en.wikipedia.org/w/api.php",
+                params={
+                    "action": "query",
+                    "titles": title,
+                    "prop": "pageimages",
+                    "pithumbsize": 420,
+                    "format": "json",
+                    "redirects": 1,
+                },
+                timeout=5,
+            )
+            for page in r.json()["query"]["pages"].values():
+                src = page.get("thumbnail", {}).get("source")
+                if src:
+                    return src
+        except Exception:
+            pass
+    return None
+
+
+@st.cache_data(show_spinner=False)
+def build_image_map(model_fulls: tuple) -> dict:
+    """Pre-fetch Wikipedia thumbnail URLs for all models in parallel."""
+    result = {}
+    with ThreadPoolExecutor(max_workers=20) as pool:
+        futures = {pool.submit(_fetch_wiki_image, m): m for m in model_fulls}
+        for fut in as_completed(futures):
+            url = fut.result()
+            if url:
+                result[futures[fut]] = url
+    return result
+
+
 df = load_data()
+image_map = build_image_map(tuple(sorted(df["Model_Full"].unique())))
 
 # ── Sidebar ────────────────────────────────────────────────────────────────────
 with st.sidebar:
@@ -149,6 +194,7 @@ if not filtered.empty:
         color="Brand",
         size="Value_Per_Dollar",
         hover_name="Model_Full",
+        custom_data=["Model_Full"],
         hover_data={
             "MSRP_USD": ":$,.0f",
             "True_Value_Score": ":.1f",
@@ -186,7 +232,76 @@ if not filtered.empty:
         legend_itemclick="toggleothers",
         legend_itemdoubleclick="toggle",
     )
-    st.plotly_chart(fig_scatter, use_container_width=True)
+    # Render chart with instant JS hover image (no Python round-trip needed)
+    _images_js = json.dumps(image_map)
+    _fig_js = fig_scatter.to_json()
+    st.components.v1.html(f"""
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+    body {{ margin:0; padding:0; background:transparent; overflow:hidden; }}
+    #chart {{ width:100%; height:530px; }}
+    #img-panel {{
+      display:none;
+      position:absolute;
+      top:12px; right:12px;
+      background:rgba(17,24,39,0.96);
+      border:1px solid #374151;
+      border-radius:10px;
+      padding:10px;
+      width:180px;
+      z-index:999;
+      pointer-events:none;
+    }}
+    #img-panel img {{ width:100%; border-radius:6px; display:block; }}
+    #img-panel p {{
+      color:#f9fafb;
+      font-size:0.75rem;
+      margin:6px 0 0;
+      text-align:center;
+      font-family:Inter,system-ui,sans-serif;
+      line-height:1.3;
+    }}
+  </style>
+</head>
+<body>
+  <div style="position:relative;">
+    <div id="chart"></div>
+    <div id="img-panel">
+      <img id="hover-img" src="" alt="" />
+      <p id="hover-name"></p>
+    </div>
+  </div>
+  <script>
+    var figure = {_fig_js};
+    var images = {_images_js};
+    var panel = document.getElementById('img-panel');
+    var img   = document.getElementById('hover-img');
+    var name  = document.getElementById('hover-name');
+
+    Plotly.newPlot('chart', figure.data, figure.layout, {{responsive:true}});
+
+    document.getElementById('chart').on('plotly_hover', function(evt) {{
+      var pt = evt.points[0];
+      var cd = pt.customdata;
+      var modelName = Array.isArray(cd) ? cd[0] : cd;
+      if (modelName && images[modelName]) {{
+        img.src  = images[modelName];
+        name.textContent = modelName;
+        panel.style.display = 'block';
+      }}
+    }});
+
+    document.getElementById('chart').on('plotly_unhover', function() {{
+      panel.style.display = 'none';
+    }});
+  </script>
+</body>
+</html>
+""", height=545, scrolling=False)
 
 # ── Value per Dollar by brand ──────────────────────────────────────────────────
 st.markdown("### Average Value per Dollar by Brand")
