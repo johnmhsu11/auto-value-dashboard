@@ -1,116 +1,116 @@
-Brand,Model,Class,MSRP_USD,Residual_5yr_Pct,Annual_Maintenance_USD,Reliability_Score,Safety_Score
-Toyota,Camry,Sedan,26000,54,388,8.5,5
-Toyota,Corolla,Compact Sedan,22000,52,362,8.5,5
-Toyota,RAV4,Compact SUV,30000,57,429,8.0,5
-Toyota,Tacoma,Midsize Truck,32000,68,478,7.5,4
-Toyota,Highlander,Midsize SUV,38000,51,518,7.5,5
-Toyota,4Runner,Midsize SUV,40000,72,514,7.0,4
-Toyota,Prius,Hybrid Sedan,28000,50,408,8.5,5
-Toyota,Tundra,Full-size Truck,38000,62,556,7.0,4
-Toyota,Sienna,Minivan,37000,47,547,8.0,5
-Toyota,Venza,Midsize SUV,33000,52,450,8.0,5
-Honda,Civic,Compact Sedan,23000,52,368,8.0,5
-Honda,Accord,Sedan,28000,50,400,8.0,5
-Honda,CR-V,Compact SUV,31000,55,407,8.0,5
-Honda,Pilot,Midsize SUV,38000,48,490,7.5,5
-Honda,Odyssey,Minivan,37000,42,547,7.5,5
-Honda,HR-V,Compact SUV,24000,50,384,8.0,5
-Honda,Ridgeline,Midsize Truck,38000,53,541,8.0,5
-Honda,Passport,Midsize SUV,36000,47,460,7.5,5
-Ford,F-150,Full-size Truck,33000,60,788,6.0,4
-Ford,Mustang,Sports Car,30000,52,709,6.0,4
-Ford,Explorer,Midsize SUV,36000,46,732,5.5,4
-Ford,Bronco,Midsize SUV,33000,62,684,5.5,4
-Ford,Escape,Compact SUV,28000,44,636,5.5,5
-Ford,Maverick,Compact Truck,22000,58,492,7.0,4
-Ford,Edge,Midsize SUV,36000,40,611,5.5,4
-Chevrolet,Silverado,Full-size Truck,32000,58,714,5.5,4
-Chevrolet,Equinox,Compact SUV,27000,42,537,5.5,5
-Chevrolet,Malibu,Sedan,23000,35,529,5.5,5
-Chevrolet,Traverse,Midsize SUV,36000,38,594,5.0,5
-Chevrolet,Colorado,Midsize Truck,28000,52,614,5.5,4
-Chevrolet,Blazer,Midsize SUV,33000,40,572,5.0,5
-Chevrolet,Tahoe,Full-size SUV,52000,55,748,5.5,5
-BMW,3 Series,Luxury Sedan,44000,50,1400,5.0,5
-BMW,5 Series,Luxury Sedan,56000,47,1700,5.0,5
-BMW,X3,Luxury Compact SUV,46000,48,1400,4.5,5
-BMW,X5,Luxury Midsize SUV,62000,47,1700,4.5,5
-BMW,X7,Luxury Full-size SUV,76000,45,2000,4.5,5
-BMW,M3,Sports Car,73000,55,2200,4.0,4
-Mercedes-Benz,C-Class,Luxury Sedan,45000,44,1500,4.5,5
-Mercedes-Benz,E-Class,Luxury Sedan,57000,42,1800,4.5,5
-Mercedes-Benz,GLC,Luxury Compact SUV,48000,44,1500,4.0,5
-Mercedes-Benz,GLE,Luxury Midsize SUV,63000,42,1900,4.0,5
-Mercedes-Benz,S-Class,Luxury Sedan,114000,43,2400,4.0,5
-Mercedes-Benz,GLS,Luxury Full-size SUV,90000,40,2200,4.0,5
-Audi,A4,Luxury Sedan,41000,46,1300,5.0,5
-Audi,A6,Luxury Sedan,56000,44,1500,5.0,5
-Audi,Q5,Luxury Compact SUV,45000,47,1300,4.5,5
-Audi,Q7,Luxury Midsize SUV,57000,44,1600,4.5,5
-Audi,e-tron,Luxury Electric SUV,71000,40,900,4.5,5
-Lexus,RX,Luxury Midsize SUV,48000,58,551,8.5,5
-Lexus,ES,Luxury Sedan,42000,55,510,8.5,5
-Lexus,NX,Luxury Compact SUV,39000,56,508,8.0,5
-Lexus,GX,Luxury Midsize SUV,57000,62,628,8.0,4
-Lexus,IS,Luxury Compact Sedan,39000,54,564,8.0,5
-Lexus,LX,Luxury Full-size SUV,88000,60,742,7.5,4
-Tesla,Model 3,Electric Sedan,43000,52,282,5.5,5
-Tesla,Model Y,Electric SUV,47000,55,295,5.5,5
-Tesla,Model S,Luxury Electric Sedan,89000,50,350,5.0,5
-Tesla,Model X,Luxury Electric SUV,98000,48,380,4.5,5
-Jeep,Wrangler,Midsize SUV,31000,65,694,4.5,3
-Jeep,Grand Cherokee,Midsize SUV,39000,47,666,4.5,4
-Jeep,Cherokee,Compact SUV,29000,38,590,4.0,4
-Jeep,Compass,Compact SUV,26000,35,527,4.0,4
-Subaru,Outback,Midsize SUV,28000,54,522,7.0,5
-Subaru,Forester,Compact SUV,27000,52,484,7.5,5
-Subaru,Crosstrek,Compact SUV,23000,55,478,7.5,5
-Subaru,Impreza,Compact Sedan,20000,44,457,7.5,5
-Mazda,CX-5,Compact SUV,28000,55,447,8.0,5
-Mazda,Mazda3,Compact Sedan,22000,48,386,8.0,5
-Mazda,CX-50,Compact SUV,29000,54,460,7.5,5
-Mazda,CX-9,Midsize SUV,36000,48,490,7.5,5
-Hyundai,Elantra,Compact Sedan,20000,44,431,7.0,5
-Hyundai,Tucson,Compact SUV,27000,47,451,7.0,5
-Hyundai,Santa Fe,Midsize SUV,33000,47,493,7.0,5
-Hyundai,Sonata,Sedan,26000,42,458,7.0,5
-Hyundai,Palisade,Midsize SUV,35000,48,498,7.0,5
-Hyundai,Ioniq 5,Electric SUV,42000,45,300,6.5,5
-Kia,Sorento,Midsize SUV,30000,48,462,7.0,5
-Kia,Telluride,Midsize SUV,33000,58,479,7.5,5
-Kia,Sportage,Compact SUV,26000,48,436,7.0,5
-Kia,K5,Sedan,24000,44,441,7.0,5
-Kia,Forte,Compact Sedan,20000,40,415,7.0,5
-Nissan,Altima,Sedan,24000,40,483,6.0,5
-Nissan,Rogue,Compact SUV,28000,44,467,6.0,5
-Nissan,Sentra,Compact Sedan,20000,38,420,6.0,5
-Nissan,Pathfinder,Midsize SUV,35000,42,542,5.5,5
-Nissan,Frontier,Midsize Truck,29000,52,472,6.5,4
-Volkswagen,Jetta,Compact Sedan,22000,38,630,5.5,5
-Volkswagen,Tiguan,Compact SUV,28000,40,680,5.0,5
-Volkswagen,Atlas,Midsize SUV,35000,38,720,5.0,5
-Volkswagen,Golf,Compact Sedan,24000,42,610,6.0,5
-Porsche,Cayenne,Luxury Midsize SUV,74000,55,2000,6.0,5
-Porsche,Macan,Luxury Compact SUV,58000,52,1600,6.0,5
-Porsche,911,Sports Car,106000,62,1800,6.5,4
-RAM,1500,Full-size Truck,35000,55,691,5.5,4
-RAM,2500,Heavy Duty Truck,42000,58,720,5.5,4
-GMC,Sierra,Full-size Truck,34000,57,714,5.5,4
-GMC,Terrain,Compact SUV,28000,40,540,5.5,5
-GMC,Acadia,Midsize SUV,36000,38,605,5.0,5
-GMC,Canyon,Midsize Truck,29000,50,614,5.5,4
-Cadillac,Escalade,Luxury Full-size SUV,78000,45,1100,5.0,5
-Cadillac,XT5,Luxury Midsize SUV,46000,38,750,5.0,5
-Cadillac,CT5,Luxury Sedan,37000,36,720,5.0,5
-Volvo,XC60,Luxury Compact SUV,46000,44,1100,5.5,5
-Volvo,XC90,Luxury Midsize SUV,57000,42,1300,5.0,5
-Volvo,S60,Luxury Sedan,40000,40,1000,5.5,5
-Acura,MDX,Luxury Midsize SUV,50000,44,721,7.0,5
-Acura,RDX,Luxury Compact SUV,42000,46,656,7.5,5
-Acura,TLX,Luxury Sedan,38000,40,601,7.0,5
-Lincoln,Navigator,Luxury Full-size SUV,78000,42,1200,4.5,5
-Lincoln,Aviator,Luxury Midsize SUV,52000,38,900,4.5,5
-Lincoln,Corsair,Luxury Compact SUV,38000,36,800,5.0,5
-Land Rover,Defender,Luxury Midsize SUV,53000,52,1800,3.0,5
-Land Rover,Range Rover,Luxury Full-size SUV,96000,45,2600,2.5,5
-Land Rover,Discovery,Luxury Midsize SUV,56000,42,2000,2.5,5
+Brand,Model,Class,MSRP_USD,Residual_5yr_Pct,Annual_Maintenance_USD,Reliability_Score,Safety_Score,Off_Road_Rating
+Toyota,Camry,Sedan,26000,54,388,8.5,5,No
+Toyota,Corolla,Compact Sedan,22000,52,362,8.5,5,No
+Toyota,RAV4,Compact SUV,30000,57,429,8.0,5,Good
+Toyota,Tacoma,Midsize Truck,32000,68,478,7.5,4,Good
+Toyota,Highlander,Midsize SUV,38000,51,518,7.5,5,Moderate
+Toyota,4Runner,Midsize SUV,40000,72,514,7.0,4,Excellent
+Toyota,Prius,Hybrid Sedan,28000,50,408,8.5,5,No
+Toyota,Tundra,Full-size Truck,38000,62,556,7.0,4,Moderate
+Toyota,Sienna,Minivan,37000,47,547,8.0,5,No
+Toyota,Venza,Midsize SUV,33000,52,450,8.0,5,No
+Honda,Civic,Compact Sedan,23000,52,368,8.0,5,No
+Honda,Accord,Sedan,28000,50,400,8.0,5,No
+Honda,CR-V,Compact SUV,31000,55,407,8.0,5,Moderate
+Honda,Pilot,Midsize SUV,38000,48,490,7.5,5,Moderate
+Honda,Odyssey,Minivan,37000,42,547,7.5,5,No
+Honda,HR-V,Compact SUV,24000,50,384,8.0,5,No
+Honda,Ridgeline,Midsize Truck,38000,53,541,8.0,5,Moderate
+Honda,Passport,Midsize SUV,36000,47,460,7.5,5,Moderate
+Ford,F-150,Full-size Truck,33000,60,788,6.0,4,Good
+Ford,Mustang,Sports Car,30000,52,709,6.0,4,No
+Ford,Explorer,Midsize SUV,36000,46,732,5.5,4,Moderate
+Ford,Bronco,Midsize SUV,33000,62,684,5.5,4,Excellent
+Ford,Escape,Compact SUV,28000,44,636,5.5,5,No
+Ford,Maverick,Compact Truck,22000,58,492,7.0,4,No
+Ford,Edge,Midsize SUV,36000,40,611,5.5,4,No
+Chevrolet,Silverado,Full-size Truck,32000,58,714,5.5,4,Moderate
+Chevrolet,Equinox,Compact SUV,27000,42,537,5.5,5,No
+Chevrolet,Malibu,Sedan,23000,35,529,5.5,5,No
+Chevrolet,Traverse,Midsize SUV,36000,38,594,5.0,5,No
+Chevrolet,Colorado,Midsize Truck,28000,52,614,5.5,4,Good
+Chevrolet,Blazer,Midsize SUV,33000,40,572,5.0,5,No
+Chevrolet,Tahoe,Full-size SUV,52000,55,748,5.5,5,Moderate
+BMW,3 Series,Luxury Sedan,44000,50,1400,5.0,5,No
+BMW,5 Series,Luxury Sedan,56000,47,1700,5.0,5,No
+BMW,X3,Luxury Compact SUV,46000,48,1400,4.5,5,Moderate
+BMW,X5,Luxury Midsize SUV,62000,47,1700,4.5,5,Moderate
+BMW,X7,Luxury Full-size SUV,76000,45,2000,4.5,5,Moderate
+BMW,M3,Sports Car,73000,55,2200,4.0,4,No
+Mercedes-Benz,C-Class,Luxury Sedan,45000,44,1500,4.5,5,No
+Mercedes-Benz,E-Class,Luxury Sedan,57000,42,1800,4.5,5,No
+Mercedes-Benz,GLC,Luxury Compact SUV,48000,44,1500,4.0,5,Moderate
+Mercedes-Benz,GLE,Luxury Midsize SUV,63000,42,1900,4.0,5,Moderate
+Mercedes-Benz,S-Class,Luxury Sedan,114000,43,2400,4.0,5,No
+Mercedes-Benz,GLS,Luxury Full-size SUV,90000,40,2200,4.0,5,Moderate
+Audi,A4,Luxury Sedan,41000,46,1300,5.0,5,No
+Audi,A6,Luxury Sedan,56000,44,1500,5.0,5,No
+Audi,Q5,Luxury Compact SUV,45000,47,1300,4.5,5,Moderate
+Audi,Q7,Luxury Midsize SUV,57000,44,1600,4.5,5,Moderate
+Audi,e-tron,Luxury Electric SUV,71000,40,900,4.5,5,No
+Lexus,RX,Luxury Midsize SUV,48000,58,551,8.5,5,No
+Lexus,ES,Luxury Sedan,42000,55,510,8.5,5,No
+Lexus,NX,Luxury Compact SUV,39000,56,508,8.0,5,No
+Lexus,GX,Luxury Midsize SUV,57000,62,628,8.0,4,Good
+Lexus,IS,Luxury Compact Sedan,39000,54,564,8.0,5,No
+Lexus,LX,Luxury Full-size SUV,88000,60,742,7.5,4,Excellent
+Tesla,Model 3,Electric Sedan,43000,52,282,5.5,5,No
+Tesla,Model Y,Electric SUV,47000,55,295,5.5,5,No
+Tesla,Model S,Luxury Electric Sedan,89000,50,350,5.0,5,No
+Tesla,Model X,Luxury Electric SUV,98000,48,380,4.5,5,No
+Jeep,Wrangler,Midsize SUV,31000,65,694,4.5,3,Excellent
+Jeep,Grand Cherokee,Midsize SUV,39000,47,666,4.5,4,Good
+Jeep,Cherokee,Compact SUV,29000,38,590,4.0,4,Moderate
+Jeep,Compass,Compact SUV,26000,35,527,4.0,4,No
+Subaru,Outback,Midsize SUV,28000,54,522,7.0,5,Good
+Subaru,Forester,Compact SUV,27000,52,484,7.5,5,Good
+Subaru,Crosstrek,Compact SUV,23000,55,478,7.5,5,Good
+Subaru,Impreza,Compact Sedan,20000,44,457,7.5,5,Moderate
+Mazda,CX-5,Compact SUV,28000,55,447,8.0,5,Moderate
+Mazda,Mazda3,Compact Sedan,22000,48,386,8.0,5,No
+Mazda,CX-50,Compact SUV,29000,54,460,7.5,5,Moderate
+Mazda,CX-9,Midsize SUV,36000,48,490,7.5,5,No
+Hyundai,Elantra,Compact Sedan,20000,44,431,7.0,5,No
+Hyundai,Tucson,Compact SUV,27000,47,451,7.0,5,No
+Hyundai,Santa Fe,Midsize SUV,33000,47,493,7.0,5,No
+Hyundai,Sonata,Sedan,26000,42,458,7.0,5,No
+Hyundai,Palisade,Midsize SUV,35000,48,498,7.0,5,No
+Hyundai,Ioniq 5,Electric SUV,42000,45,300,6.5,5,No
+Kia,Sorento,Midsize SUV,30000,48,462,7.0,5,No
+Kia,Telluride,Midsize SUV,33000,58,479,7.5,5,No
+Kia,Sportage,Compact SUV,26000,48,436,7.0,5,No
+Kia,K5,Sedan,24000,44,441,7.0,5,No
+Kia,Forte,Compact Sedan,20000,40,415,7.0,5,No
+Nissan,Altima,Sedan,24000,40,483,6.0,5,No
+Nissan,Rogue,Compact SUV,28000,44,467,6.0,5,No
+Nissan,Sentra,Compact Sedan,20000,38,420,6.0,5,No
+Nissan,Pathfinder,Midsize SUV,35000,42,542,5.5,5,Moderate
+Nissan,Frontier,Midsize Truck,29000,52,472,6.5,4,Good
+Volkswagen,Jetta,Compact Sedan,22000,38,630,5.5,5,No
+Volkswagen,Tiguan,Compact SUV,28000,40,680,5.0,5,No
+Volkswagen,Atlas,Midsize SUV,35000,38,720,5.0,5,Moderate
+Volkswagen,Golf,Compact Sedan,24000,42,610,6.0,5,No
+Porsche,Cayenne,Luxury Midsize SUV,74000,55,2000,6.0,5,Moderate
+Porsche,Macan,Luxury Compact SUV,58000,52,1600,6.0,5,No
+Porsche,911,Sports Car,106000,62,1800,6.5,4,No
+RAM,1500,Full-size Truck,35000,55,691,5.5,4,Good
+RAM,2500,Heavy Duty Truck,42000,58,720,5.5,4,Good
+GMC,Sierra,Full-size Truck,34000,57,714,5.5,4,Moderate
+GMC,Terrain,Compact SUV,28000,40,540,5.5,5,No
+GMC,Acadia,Midsize SUV,36000,38,605,5.0,5,No
+GMC,Canyon,Midsize Truck,29000,50,614,5.5,4,Good
+Cadillac,Escalade,Luxury Full-size SUV,78000,45,1100,5.0,5,Moderate
+Cadillac,XT5,Luxury Midsize SUV,46000,38,750,5.0,5,No
+Cadillac,CT5,Luxury Sedan,37000,36,720,5.0,5,No
+Volvo,XC60,Luxury Compact SUV,46000,44,1100,5.5,5,Moderate
+Volvo,XC90,Luxury Midsize SUV,57000,42,1300,5.0,5,Moderate
+Volvo,S60,Luxury Sedan,40000,40,1000,5.5,5,No
+Acura,MDX,Luxury Midsize SUV,50000,44,721,7.0,5,No
+Acura,RDX,Luxury Compact SUV,42000,46,656,7.5,5,No
+Acura,TLX,Luxury Sedan,38000,40,601,7.0,5,No
+Lincoln,Navigator,Luxury Full-size SUV,78000,42,1200,4.5,5,No
+Lincoln,Aviator,Luxury Midsize SUV,52000,38,900,4.5,5,No
+Lincoln,Corsair,Luxury Compact SUV,38000,36,800,5.0,5,No
+Land Rover,Defender,Luxury Midsize SUV,53000,52,1800,3.0,5,Excellent
+Land Rover,Range Rover,Luxury Full-size SUV,96000,45,2600,2.5,5,Good
+Land Rover,Discovery,Luxury Midsize SUV,56000,42,2000,2.5,5,Good

@@ -75,6 +75,14 @@ with st.sidebar:
     all_classes = sorted(df["Class"].unique())
     selected_classes = st.multiselect("Vehicle Class", all_classes, default=all_classes)
 
+    st.markdown("**Off-Road Capability**")
+    off_road_filter = st.radio(
+        "Off-Road Capability",
+        options=["All Vehicles", "Off-Road Capable (Good or better)", "Excellent Only", "Not Off-Road"],
+        index=0,
+        label_visibility="collapsed",
+    )
+
     price_min, price_max = int(df["MSRP_USD"].min()), int(df["MSRP_USD"].max())
     price_range = st.slider(
         "MSRP Range (USD)", price_min, price_max, (price_min, price_max), step=1000,
@@ -87,10 +95,18 @@ with st.sidebar:
         unsafe_allow_html=True,
     )
 
+off_road_map = {
+    "All Vehicles": ["Excellent", "Good", "Moderate", "No"],
+    "Off-Road Capable (Good or better)": ["Excellent", "Good"],
+    "Excellent Only": ["Excellent"],
+    "Not Off-Road": ["No"],
+}
+
 filtered = df[
     df["Brand"].isin(selected_brands) &
     df["Class"].isin(selected_classes) &
-    df["MSRP_USD"].between(*price_range)
+    df["MSRP_USD"].between(*price_range) &
+    df["Off_Road_Rating"].isin(off_road_map[off_road_filter])
 ]
 
 # ── Header ─────────────────────────────────────────────────────────────────────
@@ -140,6 +156,7 @@ if not filtered.empty:
             "Reliability_Score": ":.1f",
             "Residual_5yr_Pct": ":.0f%%",
             "Five_yr_Cost_USD": ":$,.0f",
+            "Off_Road_Rating": True,
             "Brand": False,
         },
         color_discrete_sequence=px.colors.qualitative.Bold,
@@ -150,6 +167,7 @@ if not filtered.empty:
             "Reliability_Score": "Reliability",
             "Residual_5yr_Pct": "5yr Residual",
             "Five_yr_Cost_USD": "5yr Total Cost",
+            "Off_Road_Rating": "Off-Road",
         },
         size_max=22,
     )
@@ -165,6 +183,8 @@ if not filtered.empty:
             bgcolor="rgba(31,41,55,0.8)",
             bordercolor="#374151", borderwidth=1,
         ),
+        legend_itemclick="toggleothers",
+        legend_itemdoubleclick="toggle",
     )
     st.plotly_chart(fig_scatter, use_container_width=True)
 
@@ -208,6 +228,7 @@ table_df = (
         "Brand", "Model", "Class", "MSRP_USD", "True_Value_Score",
         "Value_Per_Dollar", "Reliability_Score", "Residual_5yr_Pct",
         "Safety_Score", "Annual_Maintenance_USD", "Five_yr_Cost_USD",
+        "Off_Road_Rating",
     ]]
     .sort_values("Value_Per_Dollar", ascending=False)
     .rename(columns={
@@ -219,6 +240,7 @@ table_df = (
         "Safety_Score": "Safety",
         "Annual_Maintenance_USD": "Maint./yr",
         "Five_yr_Cost_USD": "5yr Total Cost",
+        "Off_Road_Rating": "Off-Road",
     })
 )
 st.dataframe(
